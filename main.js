@@ -1,4 +1,4 @@
-const app = {
+const app = Vue.createApp({
   data() {
     return {
       Hokkaido: [{
@@ -107,6 +107,4 @@ const app = {
       }
     }
   }
-}
-
-mountedApp = Vue.createApp(app).mount('#app')
+})
