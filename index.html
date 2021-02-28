@@ -28,9 +28,11 @@
 
   <div id="app">
     <!--Head-->
-    <h1 class="flex items-center justify-left text-3xl font-bold mb-8">
+    <div class="flex items-center justify-left text-3xl font-bold mb-8">
       Travel Hokkaido Gallery<span class="text-4xl font-bold text-red-400 tracking-wider">|</span>
       LIKE <i class="material-icons text-red-400 text-3xl">favorite</i> : {{sumLike}}
+
+
 
       <!--Block Form-->
       <div>
@@ -43,7 +45,7 @@
         <i v-else="searchOpen" class="material-icons inline-block text-5xl text-red-400 text-3xl ml-5"
           @click="openSearchMenu">search</i>
       </div>
-    </h1>
+    </div>
 
 
     <div class="grid grid-cols-3 auto-rows-auto gap-16 font-semibold">
