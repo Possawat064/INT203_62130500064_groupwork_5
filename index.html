@@ -34,17 +34,6 @@
 
 
 
-      <!--Block Form-->
-      <div>
-        <div v-if="searchOpen">
-          <input v-model="inputsTask" placeholder="Searching Here.... "
-            class="rounded-lg px-2 text-lg ml-5 border-2 border-red-400">
-          <button @click="closeSearchMenu" class="bg-red-400 text-white rounded-lg px-2 text-lg ml-1">Cancle</button>
-        </div>
-
-        <i v-else="searchOpen" class="material-icons inline-block text-5xl text-red-400 text-3xl ml-5"
-          @click="openSearchMenu">search</i>
-      </div>
     </div>
 
 
@@ -63,22 +52,8 @@
         </div>
       </div>
       <div></div>
-
-      <!--Show Image-->
-      <div v-for="(task,index) in filteredList" class="mx-auto">
-        <img :src="task.url" class="w-80 h-60 rounded-md border-2 border-red-400" v-on:click="viewImg(index)">
-        <p class="text-center mt-6 text-xl tracking-wider">
-          <i v-if="task.Like" class="material-icons text-red-400 text-4xl" v-on:click="likeCheck(index)">favorite</i>
-          <i v-else="task.Like" class="material-icons text-4xl" v-on:click="likeCheck(index)">favorite_border</i>
-          {{task.name}}
-        </p>
-      </div>
+      
     </div>
-
-    <!--Search ไม่เจอ-->
-    <div v-if="searchFound" class="text-center mt-48 text-9xl text-red-400">No Photo !!!</div>
-
-
 
   </div>
 

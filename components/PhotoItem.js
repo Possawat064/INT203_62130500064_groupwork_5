@@ -8,7 +8,7 @@ app.component('photo-items', {
     'filtered-list': Array
 
   },
-  //html
+  /*html*/
   template: `
     <div class="grid grid-cols-3 auto-rows-auto gap-16 font-semibold">
      <div v-for="(task,index) in filteredList" class="mx-auto">
