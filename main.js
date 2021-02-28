@@ -73,27 +73,20 @@ const app = Vue.createApp({
     likeCheck(index) {
       this.Hokkaido[index].Like = !this.Hokkaido[index].Like
     },
-    openSearchMenu() {
-      this.searchOpen = !this.searchOpen
-    },
-    closeSearchMenu() {
-      this.searchOpen = !this.searchOpen
-      this.inputsTask = ''
-    },
     opencloseSearchMenu() {
       this.searchOpen = !this.searchOpen
       this.inputsTask = ''
-  },
+    },
     viewImg(index) {
       this.selectImage = true;
       this.currentIndex = index;
     },
     hideView() {
       this.selectImage = false;
+    },
+    search(search) {
+      this.inputsTask = search;
     }
-  },
-  search(search) {
-    this.inputsTask = search;
   },
 
   computed: {

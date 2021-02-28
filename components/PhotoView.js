@@ -6,9 +6,9 @@ app.component('photo-views', {
   },
   /*html*/
   template: `
-    <div class="grid grid-cols-3 auto-rows-auto gap-16 font-semibold">
+    <div class="grid grid-cols-3 auto-rows-auto gap-16 font-semibold mb-16">
       <div v-if="selectImage"></div>
-        <div v-if="showImages">
+        <div v-if="selectImage">
           <div class="bg-black text-xl rounded-lg font-medium mt-5 py-5 mx-auto my-auto border-2 border-red-400">
             <div class="px-auto">
               <span class="material-icons select-none flex justify-end mt-1 mb-1 mx-auto text-white"
@@ -27,5 +27,4 @@ app.component('photo-views', {
       this.$emit('hide-view', this.selectImage);
     }
   }
-
 })

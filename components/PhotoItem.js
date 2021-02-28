@@ -20,7 +20,7 @@ app.component('photo-items', {
          </p>
       </div>
 
-      <div v-if="searchFound" class="text-center mt-48 text-9xl text-red-400">No Photo !!!</div>
+      <div v-if="searchFound" class="text-center col-span-3 mt-48 text-9xl text-red-400">No Photo !!!</div>
     </div>
       `,
   data() {
