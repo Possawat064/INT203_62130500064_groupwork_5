@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Basic Vue Js - HelloWorld App</title>
+
+  <!-- https://google.github.io/material-design-icons/#icon-font-for-the-web -->
+  <!-- Using via Google Web Fonts -->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet" />
+
+  <!-- https://tailwindcss.com/docs/installation -->
+  <!-- Using Tailwind via CDN -->
+  <link href="https://unpkg.com/tailwindcss@^2/dist/tailwind.min.css" rel="stylesheet" />
+
+  <!-- https://v3.vuejs.org/guide/installation.html#release-notes -->
+  <!-- Vue CDN -->
+  <script src="https://unpkg.com/vue@next"></script>
+
+  <!--icon material design CDN-->
+  <!--https://material.io/resources/icons/?style=baseline-->
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+
+</head>
+
+<body class="bg-blue-200 px-16 py-12">
+
+  <div id="app">
+    <!--Head-->
+    <h1 class="flex items-center justify-left text-3xl font-bold mb-8">
+      Travel Hokkaido Gallery<span class="text-4xl font-bold text-red-400 tracking-wider">|</span>
+      LIKE <i class="material-icons text-red-400 text-3xl">favorite</i> : {{sumLike}}
+
+      <!--Block Form-->
+      <div>
+        <div v-if="searchOpen">
+          <input v-model="inputsTask" placeholder="Searching Here.... "
+            class="rounded-lg px-2 text-lg ml-5 border-2 border-red-400">
+          <button @click="closeSearchMenu" class="bg-red-400 text-white rounded-lg px-2 text-lg ml-1">Cancle</button>
+        </div>
+
+        <i v-else="searchOpen" class="material-icons inline-block text-5xl text-red-400 text-3xl ml-5"
+          @click="openSearchMenu">search</i>
+      </div>
+    </h1>
+
+
+    <div class="grid grid-cols-3 auto-rows-auto gap-16 font-semibold">
+      <!--Preview-->
+      <div></div>
+      <div>
+        <div class="bg-black text-xl rounded-lg font-medium mt-5 py-5 mx-auto my-auto border-2 border-red-400">
+          <div class="px-auto" v-if="selectImage">selectImage
+            <span class="material-icons select-none flex justify-end mt-1 mb-1 mx-auto text-white"
+              @click="hideView">cancel</span>
+            <img class="w-100 h-80 mx-auto" :src="filteredList[currentIndex].url">
+          </div>
+          <p class="pt-2 text-center text-lg text-white" v-if="selectImage"> {{ filteredList[currentIndex].name }} </p>
+          <p class="p-2 my-28 text-lg	text-center text-white" v-else>Preview Photo here</p>
+        </div>
+      </div>
+      <div></div>
+
+      <!--Show Image-->
+      <div v-for="(task,index) in filteredList" class="mx-auto">
+        <img :src="task.url" class="w-80 h-60 rounded-md border-2 border-red-400" v-on:click="viewImg(index)">
+        <p class="text-center mt-6 text-xl tracking-wider">
+          <i v-if="task.Like" class="material-icons text-red-400 text-4xl" v-on:click="likeCheck(index)">favorite</i>
+          <i v-else="task.Like" class="material-icons text-4xl" v-on:click="likeCheck(index)">favorite_border</i>
+          {{task.name}}
+        </p>
+      </div>
+    </div>
+
+    <!--Search ไม่เจอ-->
+    <div v-if="searchFound" class="text-center mt-48 text-9xl text-red-400">No Photo !!!</div>
+
+
+
+  </div>
+
+  <!-- my main.js -->
+  <script src="./main.js"></script>
+</body>
+
+</html>
