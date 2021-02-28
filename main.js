@@ -80,6 +80,10 @@ const app = Vue.createApp({
       this.searchOpen = !this.searchOpen
       this.inputsTask = ''
     },
+    opencloseSearchMenu() {
+      this.searchOpen = !this.searchOpen
+      this.inputsTask = ''
+  },
     viewImg(index) {
       this.selectImage = true;
       this.currentIndex = index;
@@ -87,6 +91,9 @@ const app = Vue.createApp({
     hideView() {
       this.selectImage = false;
     }
+  },
+  search(search) {
+    this.inputsTask = search;
   },
 
   computed: {

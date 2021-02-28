@@ -31,13 +31,12 @@
     <div class="flex items-center justify-left text-3xl font-bold mb-8">
       Travel Hokkaido Gallery<span class="text-4xl font-bold text-red-400 tracking-wider">|</span>
       LIKE <i class="material-icons text-red-400 text-3xl">favorite</i> : {{sumLike}}
-
-
-
+      <photo-searchs :Hokkaido="Hokkaido" @search="search"></photo-searchs>
     </div>
-    
-
-
+    <photo-views :filtered-list="filteredList" :current-index="currentIndex" :select-image="selectImage"
+      @view-img="viewImg" @hide-view="hideView"></photo-views>
+    <photo-items :Hokkaido="Hokkaido" :search-found="searchFound" :filtered-list="filteredList" @view-img="viewImg"
+      @like-check="likeCheck"></photo-items>
   </div>
 
   <!-- my main.js -->

@@ -1,12 +1,11 @@
-app.component('photo-views',{
-    props:{
-      'filtered-list': Array,
-      'select-image': Boolean,
-      'current-index': Number
-    },
-      /*html*/
-      template:
-      `
+app.component('photo-views', {
+  props: {
+    'filtered-list': Array,
+    'select-image': Boolean,
+    'current-index': Number
+  },
+  /*html*/
+  template: `
     <div class="grid grid-cols-3 auto-rows-auto gap-16 font-semibold">
       <div v-if="selectImage"></div>
         <div v-if="showImages">
@@ -23,10 +22,10 @@ app.component('photo-views',{
       <div v-if="selectImage"></div>
     </div>
       `,
-      methods: {
-          hideView() {
-            this.$emit('hide-view',this.selectImage);
-          }
-      }
+  methods: {
+    hideView() {
+      this.$emit('hide-view', this.selectImage);
+    }
+  }
 
-  })
+})

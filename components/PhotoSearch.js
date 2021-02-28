@@ -14,7 +14,7 @@ app.component('photo-searchs', {
           <button @click="opencloseSearchMenu" class="bg-red-400 text-white rounded-lg px-2 text-lg ml-1">Cancel</button>
         </div>
         <i v-else="searchOpen" class="material-icons inline-block text-5xl text-red-400 text-3xl ml-5"
-          @click="openSearchMenu">search</i>
+          @click="opencloseSearchMenu">search</i>
       </div>
       `,
     data() {
